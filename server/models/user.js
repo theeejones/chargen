@@ -1,5 +1,5 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
 let UserSchema = new mongoose.Schema({
     email: { 
@@ -41,8 +41,13 @@ let UserSchema = new mongoose.Schema({
             },
             message: "You did not enter a valid date."
         }] 
-    } },
+    },
+    admin: {
+        type: Boolean,
+        default: false,
+        required: false
+    }
+},
 {timestamps: true});
 
-let User = mongoose.model ('User', UserSchema);
-module.exports = User;
+module.exports = mongoose.model('User', UserSchema);

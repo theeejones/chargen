@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
-let bcrypt = require('bcrypt');
+let bcrypt = require('bcrypt-as-promised');
 let session = require('express-session');
-let User = mongoose.model('User');
+let User = require('../models/user');
 
 module.exports = {
     login: (req, res) => {
