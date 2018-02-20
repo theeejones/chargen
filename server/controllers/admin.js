@@ -74,7 +74,6 @@ function build_abilityscore(res) {
 
 function build_class(res) {
     for(var i = 1; i < 13; i++) {
-        console.log(i);
         request('http://dnd5eapi.co/api/classes/' + i, { json: true }, (err, res, body) => {
             var aclass = new Class(), temp = [], arr = [], arrs = [];
             aclass.index = parseInt(body.index);
